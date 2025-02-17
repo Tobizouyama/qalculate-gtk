@@ -67,7 +67,7 @@ Although use of &app; for simple calculations should be natural and self-explana
 This manual describes the <quote>classic</quote> GTK version of &app;. Most of it (particularly from chapter 4 and forward) also applies to the <quote>new</quote> Qt version. There are however some significant differences, particularly in the layout of the main window.
 </para>
 <para>
-In the QT interface the current result is only shown in the history, which is always present below the expression entry. The current result is emphasized with a larger font size, compared to previous results. By default only the parsed expression, and not the entered expression, is displayed in the history.
+In the Qt interface the current result is only shown in the history, which is always present below the expression entry. The current result is emphasized with a larger font size, compared to previous results. By default only the parsed expression, and not the entered expression, is displayed in the history.
 </para>
 <para>
 How the currently edited expression is parsed is either displayed directly in the history or in a tooltip next to the text cursor, instead of below the expression entry. The current result of the expression (calculate-as-you-type) is also displayed in the same way (with a slight delay by default).
@@ -138,7 +138,7 @@ The <keycap>Page Up</keycap> and <keycap>Page Down</keycap> keys will access pre
 Although the expression entry can display multiple lines of text, the <keycap>Enter</keycap> key does not insert a line feed. New lines are automatically created when needed.
 </para>
 <para>
-The expression entry also accepts commands, preceded be <quote>/</quote>. These commands are the same as in the command line program, qalc.
+The expression entry also accepts commands, preceded by <quote>/</quote>. These commands are the same as in the command line program, qalc.
 </para>
 <para>
 The font used for the expression entry can be selected in the preferences dialog (<menuchoice><guimenu>Edit</guimenu><guimenuitem>Preferences</guimenuitem></menuchoice>).
@@ -168,7 +168,7 @@ To copy the result, either select <menuchoice><guimenu>Edit</guimenu><guimenuite
 <sect1 id="qalculate-calculator-buttons">
 <title>Keypad</title>
 <para>
-The keypad provides access to a simple traditional number pad and as well as more advanced functionality.
+The keypad provides access to a simple traditional number pad, as well as more advanced functionality.
 <figure id="qalculate-FIG-calculator-buttons">
 	<title>Keypad</title>
 	<screenshot>
@@ -181,13 +181,13 @@ The keypad provides access to a simple traditional number pad and as well as mor
 </figure>
 </para>
 <para>
-Click on the padlock icon to enable/disable persistent keypad, which makes it possible to display the keypad and the history simultaneously (the keypad view will be independent of the other views).
+Click on the padlock icon to enable/disable a persistent keypad, which makes it possible to display the keypad and the history simultaneously (the keypad view will be independent of the other views).
 </para>
 <para>
 The top buttons (from left to right) switches between the general keypad and the programming keypad (affects the buttons on the left side, see <xref linkend="qalculate-TBL-programming-keypad"/>), switches between exact and approximate calculation, changes rational number form, selects display mode and selects number base in result (see <xref linkend="qalculate-mode"/>).
 </para>
 <para>
-The buttons below are separated in two areas. The buttons on the right inserts basic numbers and operators, while most of the buttons to the left inserts or applies mathematical functions to the expression. All buttons on the left is paired with buttons, with downward arrows, that opens a menu with related functionality (generally more mathematical functions).
+The buttons below are separated into two areas. The buttons on the right insert basic numbers and operators, while most of the buttons on the left insert or apply mathematical functions to the expression. All buttons on the left are paired with buttons, with downward arrows, that open a menu with related functionality (generally more mathematical functions).
 </para>
 <para>
 Most of buttons to the right will do something different depending on which button on the pointing device (mouse) that is clicked (for details see the table below; all actions are displayed as tooltips when holding the pointer over a button). Button press and hold on a button (for approximately half a second) will generally perform the same action as right-click. Right-click or long press on the buttons to the left will open the associated menu.
@@ -401,7 +401,7 @@ All actions and labels of the buttons on the right can be customized using <menu
 <guibutton>DEL</guibutton> deletes one character to the right or, if the cursor is at the end of the expression, to the left of the cursor (right-click always deletes the character to the left of the cursor). Long press on the button will continuously delete.
 </para>
 <para>
-<guibutton>EXP</guibutton> inserts the shorthand notation (E or e) for ten raised to the power of x. This only applies to digits (<quote>2E6</quote> equals <quote>2 × 10^6</quote>, <quote>xEy &ne; x × 10^y</quote>). If whole or part of the current expression is selected, <quote>×10^</quote> will instead be inserted after the wrapped selection. If current input base is not 10, than the selected number base will be used as base (e.g. <quote>×16^</quote> for hexadecimal input).
+<guibutton>EXP</guibutton> inserts the shorthand notation (E or e) for ten raised to the power of x. This only applies to digits (<quote>2E6</quote> equals <quote>2 × 10^6</quote>, <quote>xEy &ne; x × 10^y</quote>). If whole or part of the current expression is selected, <quote>×10^</quote> will instead be inserted after the wrapped selection. If the current input base is not 10, then the selected number base will be used as the base (e.g. <quote>×16^</quote> for hexadecimal input).
 </para>
 <para>
 <guibutton>ANS</guibutton> inserts the first answer variable. This variable always contains the last calculated result. This will be updated after each calculation (unlike when using the answer() function with a positive argument).
@@ -410,13 +410,13 @@ All actions and labels of the buttons on the right can be customized using <menu
 The <quote>(x)</quote> button (<keycombo><keycap>Ctrl</keycap><keycap>(</keycap></keycombo>) places opening and closing parentheses around the selected text in the expression entry. If no text is selected either the expression to the right of the cursor (if the cursor is at the beginning of the expression or if there is an operator or left parenthesis to the left of the cursor) or to the left of the cursor is put inside parentheses. If the expression is empty, as well as in some other cases (to avoid broken expression), empty parentheses are inserted.
 </para>
 <para>
-The arrow buttons works a bit differently than the other. The direction of the action will depend on which half of the button that is pressed (the right side of the button, with the arrow pointing to the right, will move the insert cursor when step forward). Long press on the button will continuously move the cursor (or continuously cycle through the expression history).
+The arrow buttons work a bit differently than the others. The direction of the action will depend on which half of the button is pressed (the right side of the button, with the arrow pointing to the right, will move the insert cursor one step forward). A long press on the button will continuously move the cursor (or continuously cycle through the expression history).
 </para>
 <para>
 The characters used as decimal point and argument separator varies between different locales. The argument separator is used for separation of arguments to functions that takes more than one argument.
 </para>
 <para>
-Below follows a list of the buttons on the left side (including their menus and associated actions), from left the right, top to bottom.
+Below follows a list of the buttons on the left side (including their menus and associated actions), from left to right, top to bottom.
 <table id="qalculate-TBL-keypad-left" frame="topbot" colsep="1">
 	<title>Left Keypad</title> 
 	<tgroup cols="2" colsep="1" rowsep="0">
@@ -807,7 +807,7 @@ Additional actions are available in the context menu of the history list. This i
 <sect1 id="qalculate-menus">
 <title>Menu Bar</title>
 <para>
-The menus in the menu bar provides access to most of the functionality of &app;. Their contents are listed and described below.
+The menus in the menu bar provide access to most of the functionality of &app;. Their contents are listed and described below.
 </para>
 <table id="qalculate-TBL-file-menu" frame="topbot" colsep="1">
 	<title>File Menu</title> 
@@ -1048,7 +1048,7 @@ The menus in the menu bar provides access to most of the functionality of &app;.
 		<tbody>
 			<row valign="top">
 				<entry><para>Number Base</para></entry>
-				<entry><para>Submenu with a list of number bases (binary, octal, decimal, duodecimal, hexadecimal, sexagesimal, time format, and other bases, and roman numerals) to select for result display, and a menu item (<keycombo><keycap>Ctrl</keycap><keycap>B</keycap></keycombo>) for opening a dialog to switch number bases in expression (input) and result (output).</para></entry>
+				<entry><para>Submenu with a list of number bases (binary, octal, decimal, duodecimal, hexadecimal, sexagesimal, time format, and other bases, and Roman numerals) to select for result display, and a menu item (<keycombo><keycap>Ctrl</keycap><keycap>B</keycap></keycombo>) for opening a dialog to switch number bases in expression (input) and result (output).</para></entry>
 			</row>
 			<row valign="top">
 				<entry><para>Numerical Display</para></entry>
@@ -1378,7 +1378,7 @@ In &app; mathematical entities, such as numbers and variables, are referred to a
 To avoid confusion, functions, units, variables and unknown variables can independently be disabled.
 </para>
 <para>
-Variables, functions and units are all accessible in the menus and in the variable, function and unit managers, If their names are not remembered. Functions accessed this way have some extra conveniences. If the function has at least one argument, a dialog will pop up where arguments can be entered and a description of the function and its arguments is available. 
+Variables, functions and units are all accessible in the menus and in the variable, function and unit managers, if their names are not remembered. Functions accessed this way have some extra conveniences. If the function has at least one argument, a dialog will pop up where arguments can be entered and a description of the function and its arguments is available.
 </para>
 <para>
 &app; can handle most commonly used symbols for certain variables, functions and units, even though most are difficult to find on a keyboard. These include π for pi, √ for sqrt, € for euro, and so on. Most importantly it is possible to copy these symbols when used in the result.
@@ -1499,7 +1499,7 @@ The following operators are defined in &app; and may be used in expressions. Wor
 				<entry align="center"><para>=</para></entry>
 				<entry><para>Returns true if the left value equals the right value. Unknown variables (e.g. x) are isolated if the expression does not evaluate as true or false.</para></entry>
 				<entry align="center"><para>1 = 2, 5x = 5</para></entry>
-				<entry align="right"><para>1, x=1</para></entry>
+				<entry align="right"><para>0, x=1</para></entry>
 			</row>
 			<row valign="top">
 				<entry><para>Not equals</para></entry>
@@ -1596,7 +1596,7 @@ The following operators are defined in &app; and may be used in expressions. Wor
 				<entry><para>Bitwise Shift Right</para></entry>
 				<entry align="center"><para>&gt;&gt;</para></entry>
 				<entry><para>Shifts the bits of the left value x steps to the right, where x is the value on the right. Implemented as a shortcut for <command>shift()</command></para></entry>
-				<entry align="center"><para>0011 &lt;&lt; 1</para></entry>
+				<entry align="center"><para>0011 &gt;&gt; 1</para></entry>
 				<entry align="right"><para>0001</para></entry>
 			</row>
 			<row valign="top">
@@ -1679,7 +1679,7 @@ The following operators are defined in &app; and may be used in expressions. Wor
 			<row valign="top">
 				<entry><para>Save as Variable/Function</para></entry>
 				<entry align="center"><para>:=, =</para></entry>
-				<entry><para>Saves the value or expression to the right of the operator as a variable or function (as <command>save()</command> function). If colon is omitted, the expression is calculated before it is assigned to the variable.</para></entry>
+				<entry><para>Saves the value or expression to the right of the operator as a variable or function (as <command>save()</command> function). If the colon is omitted, the expression is calculated before it is assigned to the variable.</para></entry>
 				<entry align="center"><para>var1:=5</para><para>func1():=x+y</para><para>var1=ln(5)+2</para></entry>
 				<entry align="right"><para></para></entry>
 			</row>
@@ -1721,10 +1721,10 @@ Usually, mathematical expressions are written as normally expected. Standard ope
 The evaluation of short/implicit multiplication, without any multiplication sign (e.g. <quote>5x</quote>, <quote>5(2+3)</quote>), differs depending on the parsing mode. In the conventional mode implicit multiplication does not differ from explicit multiplication (<quote>12/2(1+2) = 12/2×3 = 18</quote>, <quote>5x/5y = 5 × x/5 × y = xy</quote>). In the <quote>parse implicit multiplication first</quote> mode, implicit multiplication is parsed before explicit multiplication (<quote>12/2(1+2) = 12/(2 × 3) = 2</quote>, <quote>5x/5y = (5 × x)/(5 × y) = x/y</quote>). The default adaptive mode works as the <quote>parse implicit multiplication first</quote> mode, unless spaces are found (<quote>1/5x = 1/(5 × x)</quote>, but <quote>1/5 x = (1/5) × x</quote>). In the adaptive mode unit expressions are parsed separately (<quote>5 m/5 m/s = (5 × m)/(5 × (m/s)) = 1 s</quote>). Function arguments without parentheses are an exception, where implicit multiplication in front of variables and units is parsed first regardless of mode (<quote>sqrt 2x = sqrt(2x)</quote>).
 </para>
 <para>
-If the limit implicit multiplication option is activated, the use of implicit multiplication when parsing expressions and displaying results will be limited to avoid confusion. For example, if this mode is not activated and <quote>integrte(5x)</quote> is accidently typed instead of <quote>integrate(5x)</quote>, the expression is interpreted as <quote>int(e × e × (5 × x) × gr × t)</quote> (displayed in history window). The result will then without any error be <quote>int(2.3940139x × km^2)</quote> instead of <quote>2.5x^2</quote>. If limit implicit multiplication is activated, the mistyped expression would instead show an error telling that <quote>integrte</quote> is not a valid variable, function or unit (unless unknowns is enabled in which case the result will be <quote>5 "integrate" × x</quote>). When implicit multiplication is limited, variables, functions and units must be separated by a space, operator or parenthesis (<quote>xy</quote> does not equal <quote>x × y</quote>).
+If the limit implicit multiplication option is activated, the use of implicit multiplication when parsing expressions and displaying results will be limited to avoid confusion. For example, if this mode is not activated and <quote>integrte(5x)</quote> is accidentally typed instead of <quote>integrate(5x)</quote>, the expression is interpreted as <quote>int(e × e × (5 × x) × gr × t)</quote> (displayed in history window). The result will then without any error be <quote>int(2.3940139x × km^2)</quote> instead of <quote>2.5x^2</quote>. If limit implicit multiplication is activated, the mistyped expression would instead show an error telling that <quote>integrte</quote> is not a valid variable, function or unit (unless unknowns is enabled in which case the result will be <quote>5 "integrate" × x</quote>). When implicit multiplication is limited, variables, functions and units must be separated by a space, operator or parenthesis (<quote>xy</quote> does not equal <quote>x × y</quote>).
 </para>
 <para>
-In addition there are two special parsing modes — RPN syntax (for details see <xref linkend="qalculate-rpn"/>) and chain syntax. The chain syntax interprets expressions in a manner similar to the immediate execution mode of a traditional calculator. Instead of using the standard order of operations, the expression is simply calculated from left to right (e.g. <quote>1 + 2 × 3 = (1 + 2) × 3 = 9</quote> instead of <quote>1 + 2 × 3 = 1 + (2 × 3) = 7</quote>). Functions, with a single argument, apply to the value immediate to the left of the function name (e.g. <quote>1 + 2 sin = 1 + sin(2)</quote>), unless parentheses are used.
+In addition there are two special parsing modes — RPN syntax (for details see <xref linkend="qalculate-rpn"/>) and chain syntax. The chain syntax interprets expressions in a manner similar to the immediate execution mode of a traditional calculator. Instead of using the standard order of operations, the expression is simply calculated from left to right (e.g. <quote>1 + 2 × 3 = (1 + 2) × 3 = 9</quote> instead of <quote>1 + 2 × 3 = 1 + (2 × 3) = 7</quote>). Functions, with a single argument, apply to the value immediately to the left of the function name (e.g. <quote>1 + 2 sin = 1 + sin(2)</quote>), unless parentheses are used.
 </para>
 </sect1>
 <sect1 id="qalculate-to">
@@ -1873,13 +1873,13 @@ Note that <quote>to</quote> and <quote>where</quote> can only be applied to the 
 <chapter id="qalculate-mode">
 <title>Calculator Modes</title>
 <para>
-&app; provides flexible parsing, calculation output and result display. There are several ways in which parsing of expression and display of results can be customized. These modes can generally be changed through the mode menu. The state of each mode can be saved under a name in <menuchoice><guimenu>Mode</guimenu><guisubmenu>Meta Modes</guisubmenu></menuchoice> for quick access. The Preset and Default meta modes are always available and represents the state when &app; is load for the first time and the mode settings automatically loaded at each startup (and by default saved on exit), respectively. Different modes are summarized below.
+&app; provides flexible parsing, calculation output and result display. There are several ways in which parsing of expression and display of results can be customized. These modes can generally be changed through the mode menu. The state of each mode can be saved under a name in <menuchoice><guimenu>Mode</guimenu><guisubmenu>Meta Modes</guisubmenu></menuchoice> for quick access. The Preset and Default meta modes are always available and represent the state when &app; is loaded for the first time and the mode settings automatically loaded at each startup (and by default saved on exit), respectively. Different modes are summarized below.
 </para>
 <variablelist>
 	<varlistentry>
 		<term>Number Bases</term>
 		<listitem><para>
-			Non-decimal bases can be selected for display of numbers in the result and parsing of numbers in expressions. This include regular number bases (binary, octal, hexadecimal, sexagesimal) as well as sexagesimal time format and roman numerals. Other number bases, as well as base for expression input, can be selected from a dialog window accessed from <menuchoice><guimenu>Mode</guimenu><guisubmenu>Number Base</guisubmenu><guimenuitem>Other...</guimenuitem></menuchoice> or <menuchoice><guimenu>Mode</guimenu><guisubmenu>Number Base</guisubmenu><guimenuitem>Select Result and Expression Base...</guimenuitem></menuchoice>.
+			Non-decimal bases can be selected for display of numbers in the result and parsing of numbers in expressions. This includes regular number bases (binary, octal, hexadecimal, sexagesimal) as well as sexagesimal time format and Roman numerals. Other number bases, as well as the base for expression input, can be selected from a dialog window accessed from <menuchoice><guimenu>Mode</guimenu><guisubmenu>Number Base</guisubmenu><guimenuitem>Other...</guimenuitem></menuchoice> or <menuchoice><guimenu>Mode</guimenu><guisubmenu>Number Base</guisubmenu><guimenuitem>Select Result and Expression Base...</guimenuitem></menuchoice>.
 			<table id="qalculate-TBL-number-bases" frame="topbot" colsep="1">
 				<title>Supported Number Bases</title> 
 				<tgroup cols="2" colsep="1" rowsep="0">
@@ -1986,7 +1986,7 @@ Note that <quote>to</quote> and <quote>where</quote> can only be applied to the 
 	<varlistentry>
 		<term>Unit Display</term>
 		<listitem><para>
-			The automatic use of prefixes for units in results can be toggled on and off. By default prefixes are only used for a selection of units (mainly standard SI and CGS units), but this can be changed to also include currencies or all other units. By default prefixes representing a power of ten not divisible by three (centi, deci, deca and hecto), as well the new SI prefixes adopted in 2022 (ronna, quetta, ronto, and quecto), are not used automatically. If denominator prefixes are not explicitly enabled, prefixes will only be set for the numerator in a fractional unit expression (e.g. <quote>1 Mg/m</quote> or <quote>1 kg/mm</quote>), unless there is no unit in the numerator. Binary prefixes are never used automatically, unless activated for information units (bits, bytes, etc.) in the preferences dialog.
+			The automatic use of prefixes for units in results can be toggled on and off. By default prefixes are only used for a selection of units (mainly standard SI and CGS units), but this can be changed to also include currencies or all other units. By default prefixes representing a power of ten not divisible by three (centi, deci, deca and hecto), as well as the new SI prefixes adopted in 2022 (ronna, quetta, ronto, and quecto), are not used automatically. If denominator prefixes are not explicitly enabled, prefixes will only be set for the numerator in a fractional unit expression (e.g. <quote>1 Mg/m</quote> or <quote>1 kg/mm</quote>), unless there is no unit in the numerator. Binary prefixes are never used automatically, unless activated for information units (bits, bytes, etc.) in the preferences dialog.
 		</para>
 		<para>
 			Units can be automatically converted to base units or the optimal units in results. Optimal conversion means that the number of units in the result is reduced to as few units as possible. Only SI units are used for conversion. If <guimenuitem>Convert to Optimal SI unit</guimenuitem> is activated, non-SI units are converted to SI units, even if equally or less optimal than the original unit(s). In optimal unit mode, currencies are converted to the local currency, unless deactivated in the preferences dialog. Mixed units conversion allows certain units, such as time units and many imperial/U.S. customary units, to be converted to a combination of appropriate units, e.g. <quote>60.2 minutes = 1 hour to 12 seconds</quote>.
@@ -2017,7 +2017,7 @@ Note that <quote>to</quote> and <quote>where</quote> can only be applied to the 
 	<varlistentry>
 		<term>Parsing Mode</term>
 		<listitem><para>
-			These options control how expressions are interpreted. There are three main modes, which mainly controls if implicit multiplication is handled differently from explicit multiplication and if spaces are taken into account or not.  See <xref linkend="qalculate-implicit-multiplication"/>.
+			These options control how expressions are interpreted. There are three main modes, which mainly control if implicit multiplication is handled differently from explicit multiplication and if spaces are taken into account or not.  See <xref linkend="qalculate-implicit-multiplication"/>.
 			If the read precision option is activated, decimal numbers are interpreted as approximate with precision equal to the number of digits (e.g. <quote>1.1 × 3.20 = 1.1±0.05 × 3.20±0.005 ≈ 3.5±0.2</quote>).
 		</para></listitem>
 	</varlistentry>
@@ -2046,7 +2046,7 @@ Central to the RPN mode is the stack, a list of registers/values that is operate
 For example, <command>5 ENTER 3 + 2 /</command> adds 5 to the stack, then adds 3 to the stack and moves 5 down a step and adds 3 to 5. The first value, 3, is removed from the stack and the value left is 8. Then 2 is added to the stack and 8 is divided by 2, resulting in 4. This would in a single expression with non-RPN (infix) syntax be entered as <quote>(5 + 3)/2</quote>.
 </para>
 <para>
-Functions operate on the top values of the stack. Functions which require multiply arguments, fill the arguments in reversed order from the top (e.g. <command>5 ENTER 2 ENTER rem</command> equals <quote>rem(5, 2)</quote>). Functions with a vector argument use all stack registers (unless the top value is a vector). This is quite useful for statistical functions (e.g. <command>5 ENTER 2 ENTER 3 ENTER 4 ENTER harmmean</command> calculates the harmonic mean of 5, 2, 3, and 4 and leaves the result, 3.1169, as the only value on the stack).
+Functions operate on the top values of the stack. Functions which require multiple arguments fill the arguments in reverse order from the top (e.g. <command>5 ENTER 2 ENTER rem</command> equals <quote>rem(5, 2)</quote>). Functions with a vector argument use all stack registers (unless the top value is a vector). This is quite useful for statistical functions (e.g. <command>5 ENTER 2 ENTER 3 ENTER 4 ENTER harmmean</command> calculates the harmonic mean of 5, 2, 3, and 4 and leaves the result, 3.1169, as the only value on the stack).
 </para>
 <para>
 When the RPN stack is enabled, full expressions can still be entered (you can add e.g. <quote>5x + 3 + 23 + sin(2)</quote> directly to the stack). The buttons on the keypad do not insert operators and functions in the expression entry, but instead apply them to the stack. This is also true for the keys on the keyboard, unless deactivated in the preferences (<menuchoice><guimenu>Edit</guimenu><guimenuitem>Preferences</guimenuitem></menuchoice>, <guilabel>Use only keypad keys for RPN</guilabel>). <keycap>Enter</keycap> calculates the current expression and adds it to the stack (calculated mathematical expressions are automatically added to the stack when the RPN stack is enabled). If the expression entry is not empty when applying an operator or function to the stack, the expression is first calculated and added to the stack. If the expression only contains an operator or a single function without arguments, the operator/function is applied to the stack.
@@ -2099,7 +2099,7 @@ Interval arithmetic is also used implicitly, regardless of selected interval cal
 Some non-invertible functions (including bessel and airy functions) do not properly support interval arithmetic and only the function values for the endpoints of the interval are calculated. Trigonometric functions returns correct intervals for real and imaginary numbers, but will in some cases for complex numbers with both a real and imaginary part return a too wide interval. Generally, the resulting interval will be guaranteed to include the true interval, but may for non-trivial expression (especially involving complex numbers) return an interval that is too wide.
 </para>
 <para>
-The result is by default shown as an ordinary number with the number of significant digits determined by the size of the uncertainty (<quote>2.11±0.03 = 2.1</quote>), or the width of interval, unless the interval is too wide. If the <command>interval()</command> function has been used in the expression the result is by default displayed as an interval, and if <quote>±</quote> notation (or the <command>uncertainty()</command> function) has been used, it will also be used in the result. The default behavior can be changed from<menuchoice><guimenu>Mode</guimenu><guimenu>Interval Display</guimenu></menuchoice>. The midpoint alternative displays the value halfway between the lower and upper limit of the interval (<quote>interval(2.075, 2.15) = 2.1125</quote>). Note that, for the plus/minus notation, the same midpoint (note that when interval arithmetic is enabled this does not necessarily equal the result for the midpoint of intervals in the expression) is displayed in front of the plus/minus symbol. In plus/minus notation, the uncertainty is displayed with two significant digits, with the exception that all digits before the decimal separator are always shown.
+The result is by default shown as an ordinary number with the number of significant digits determined by the size of the uncertainty (<quote>2.11±0.03 = 2.1</quote>), or the width of the interval, unless the interval is too wide. If the <command>interval()</command> function has been used in the expression the result is by default displayed as an interval, and if <quote>±</quote> notation (or the <command>uncertainty()</command> function) has been used, it will also be used in the result. The default behavior can be changed from <menuchoice><guimenu>Mode</guimenu><guimenu>Interval Display</guimenu></menuchoice>. The midpoint alternative displays the value halfway between the lower and upper limit of the interval (<quote>interval(2.075, 2.15) = 2.1125</quote>). Note that, for the plus/minus notation, the same midpoint (note that when interval arithmetic is enabled this does not necessarily equal the result for the midpoint of intervals in the expression) is displayed in front of the plus/minus symbol. In plus/minus notation, the uncertainty is displayed with two significant digits, with the exception that all digits before the decimal separator are always shown.
 </para>
 </chapter>
 <chapter id="qalculate-variables">
@@ -2166,7 +2166,7 @@ The dialog for creation of unknown variables is accessed by selecting <menuchoic
 Edit a variable by clicking <guibutton>Edit</guibutton> in the variable manager, or using the context menu (right-click) of the corresponding menu item in the menu of the <guibutton>STO</guibutton>.
 </para>
 <para>
-The special <guibutton>MR</guibutton> (<guibutton>=</guibutton> right-click) variable is updated using the classic <guibutton>MC</guibutton> (<guibutton>AC</guibutton> right-click), <guibutton>MS</guibutton> ((<guibutton>=</guibutton> middle-click), <guibutton>M+</guibutton> (<guibutton>+</guibutton> right-click), and <guibutton>M−</guibutton> (<guibutton>DEL</guibutton> middle-click) operations.
+The special <guibutton>MR</guibutton> (<guibutton>=</guibutton> right-click) variable is updated using the classic <guibutton>MC</guibutton> (<guibutton>AC</guibutton> right-click), <guibutton>MS</guibutton> (<guibutton>=</guibutton> middle-click), <guibutton>M+</guibutton> (<guibutton>+</guibutton> right-click), and <guibutton>M−</guibutton> (<guibutton>DEL</guibutton> middle-click) operations.
 </para>
 </sect1>
 <sect1 id="qalculate-vectors-matrices">
@@ -2185,7 +2185,7 @@ Vectors and matrices are most effectively used stored in a variable. &app; provi
 	</screenshot>
 </figure>
 <para>
-In this dialog, name, category and descriptive name are typed in as usual, but instead of a single value field, multiple values are entered using a table. The number of rows and columns are selected using the controls above the table. In a vector this only determines how many cells that are shown in the table and empty cells will be ignored. For matrices, each cell in the table is an element in the matrix.
+In this dialog, name, category and descriptive name are typed in as usual, but instead of a single value field, multiple values are entered using a table. The number of rows and columns are selected using the controls above the table. In a vector this only determines how many cells are shown in the table and empty cells will be ignored. For matrices, each cell in the table is an element in the matrix.
 </para>
 <para>
 Matrices and vectors can also be loaded from data files. These files must be plain text files with values organized in separated rows and columns. Select <menuchoice><guimenu>File</guimenu><guimenuitem>Import CSV File...</guimenuitem></menuchoice> and a dialog window pops up. First select the file to import and then specify whether it shall be imported as a matrix or vectors. A name, descriptive name and category can optionally be typed in. If the name field is empty, the file name will be used instead. After that, the row in the file where the data starts should be specified, as well as whether this first row contains column headings. Finally the delimiter, used to separate columns in the file, must be selected. Click <guibutton>OK</guibutton> and variables will be generated from the file. If vectors are to be generated and the file contains more than one column, the name will be used as a subcategory and each variable will add the column heading (or <quote>Column 1</quote>, <quote>Column 2</quote>, ...) to the name and the descriptive name.
@@ -2212,7 +2212,7 @@ The <command>load()</command> function can be used to access a CSV file directly
 Functions are essentially mathematical formulas. They are used to store expressions with variable values, arguments. To execute a function, the values for a number of arguments need to specified. These arguments are then inserted into the expression, making it possible to calculate.
 </para>
 <para>
-Functions are normally entered in an expression by writing the name followed by arguments, separated by commas (or semicolons in languages with comma as decimal point), in parenthesis, thus following the syntax <command>name(arg1, arg2, ...)</command>. &app; will give a helpful error message if the arguments are not correct.
+Functions are normally entered in an expression by writing the name followed by arguments, separated by commas (or semicolons in languages with comma as decimal point), in parentheses, thus following the syntax <command>name(arg1, arg2, ...)</command>. &app; will give a helpful error message if the arguments are not correct.
 </para>
 <figure id="qalculate-FIG-insert-function">
 	<title>Insert function dialog</title>
@@ -2228,7 +2228,7 @@ Functions are normally entered in an expression by writing the name followed by 
 The insert function dialog presents an easy way to insert a function and its arguments.
 </para>
 <para>
-Although it can lower the readability of an expression, it is perfectly legal to skip the parenthesis and put the arguments after a space, and end with a space or operator. This is most useful in short expressions with single argument functions (e.g. <quote>sqrt 5</quote>).
+Although it can lower the readability of an expression, it is perfectly legal to skip the parentheses and put the arguments after a space, and end with a space or operator. This is most useful in short expressions with single argument functions (e.g. <quote>sqrt 5</quote>).
 </para>
 <para>
 Argument types include:
@@ -2383,7 +2383,7 @@ Various utility functions. Most are only useful in definition of other functions
 Functions are a bit more complex than variables, but can nevertheless be relatively easily created. Select <menuchoice><guimenu>File</guimenu><guisubmenu>New</guisubmenu><guimenuitem>Function</guimenuitem></menuchoice>, or click the <guibutton>f(x)</guibutton> on the keypad or <guibutton>New</guibutton> in the function manager and a function edit dialog pops up.
 </para>
 <para>
-The function edit dialog is divided in three pages, where the first page contains the only required properties — name and an expression. x, y and z with or without (default) a backslash are used as argument placeholders in the expression.
+The function edit dialog is divided into three pages, where the first page contains the only required properties — name and an expression. x, y and z with or without (default) a backslash are used as argument placeholders in the expression.
 </para>
 <figure id="qalculate-FIG-edit-function">
 	<title>Function Edit Dialog</title>
@@ -2455,10 +2455,10 @@ Among units, &app; has support for currencies with up-to-date exchange rates. Cu
 <sect1 id="qalculate-unit-conversion">
 <title>Conversion</title>
 <para>
-Expressions can be converted to a specific unit directly in the expression entry with the <quote>to</quote> operator (right arrows, including <quote>-></quote> are also supported), which converts the left-hand expression (or the previous result) to a specified unit (e.g. <quote>5 feet + 2 inches to cm</quote> converts the result of <quote>5 feet + 2 inches</quote> to centimeters). Unit expressions may contain units, prefixes, exponents, multiplication and division. By default, no prefix will be added to units typed without prefix, but this behavior can be modified by putting a question mark in front of the unit expression (<quote>6 561 ft to m ≈ 2000 m</quote> but <quote>6 561 ft to ?m ≈ 2 km</quote>). Type <quote>to optimal</quote> to get optimal unit, <quote>to base</quote> for base units, or <quote>to mixed</quote> to force the use of mixed units (see below). Note that the conversion is always applied to the whole left-hand expression, ignoring any unmatched parentheses. The <quote>to</quote> operator can also be used for other types of result transformations (see <xref linkend="qalculate-to"/>).
+Expressions can be converted to a specific unit directly in the expression entry with the <quote>to</quote> operator (right arrows, including <quote>-></quote> are also supported), which converts the left-hand expression (or the previous result) to a specified unit (e.g. <quote>5 feet + 2 inches to cm</quote> converts the result of <quote>5 feet + 2 inches</quote> to centimeters). Unit expressions may contain units, prefixes, exponents, multiplication and division. By default, no prefix will be added to units typed without a prefix, but this behavior can be modified by putting a question mark in front of the unit expression (<quote>6 561 ft to m ≈ 2000 m</quote> but <quote>6 561 ft to ?m ≈ 2 km</quote>). Type <quote>to optimal</quote> to get optimal unit, <quote>to base</quote> for base units, or <quote>to mixed</quote> to force the use of mixed units (see below). Note that the conversion is always applied to the whole left-hand expression, ignoring any unmatched parentheses. The <quote>to</quote> operator can also be used for other types of result transformations (see <xref linkend="qalculate-to"/>).
 </para>
 <para>
-Alternatively the unit conversion view can be used. It is opened using <guilabel>Conversion</guilabel>, <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>, <menuchoice><guimenu>Edit</guimenu><guimenuitem>Convert To Unit Expression...</guimenuitem></menuchoice> or <keycombo><keycap>Ctrl</keycap><keycap>T</keycap></keycombo> (the last two options moves the focus to the unit expression entry). Enter a unit expression in the text entry and press <keycap>Enter</keycap> (or click <guibutton>Convert</guibutton>), or select a unit from the list. An appropriate unit category will automatically be selected from units in the current result. If <guibutton>Continuous expression</guibutton> is checked subsequent results will automatically be converted (if the conversion view is open), and if <guibutton>Add prefix</guibutton> is checked the optimal prefix will be set for unit expressions without any prefix. A unit can be inserted directly into the expression entry from the list using middle click or the context menu.
+Alternatively the unit conversion view can be used. It is opened using <guilabel>Conversion</guilabel>, <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>, <menuchoice><guimenu>Edit</guimenu><guimenuitem>Convert To Unit Expression...</guimenuitem></menuchoice> or <keycombo><keycap>Ctrl</keycap><keycap>T</keycap></keycombo> (the last two options moves the focus to the unit expression entry). Enter a unit expression in the text entry and press <keycap>Enter</keycap> (or click <guibutton>Convert</guibutton>), or select a unit from the list. An appropriate unit category will automatically be selected from units in the current result. If <guibutton>Continuous conversion</guibutton> is checked subsequent results will automatically be converted (if the conversion view is open), and if <guibutton>Add prefix</guibutton> is checked the optimal prefix will be set for unit expressions without any prefix. A unit can be inserted directly into the expression entry from the list using middle click or the context menu.
 <figure id="qalculate-FIG-unit-conversion">
 	<title>Unit Conversion View</title>
 	<screenshot>
@@ -2502,7 +2502,7 @@ Select <menuchoice><guimenu>File</guimenu><guisubmenu>New</guisubmenu><guimenuit
 </figure>
 Base units and named derived units normally have three different name forms defined for use in expressions — abbreviation (e.g. <quote>m</quote>), singular (<quote>meter</quote>) and plural (<quote>meters</quote>). Unnamed derived units only have an internal name, which is used to reference the unit in definitions of other units, but which should not be used in mathematical expressions.
 </para>
-<para>In addition category and descriptive name can be specified to keep the units well organized. A unit can be hidden from unit menus with the corresponding check box (this is primarily useful for some unnamed derived units which are only defined as basis for named derived units).
+<para>In addition, category and descriptive name can be specified to keep the units well organized. A unit can be hidden from unit menus with the corresponding check box (this is primarily useful for some unnamed derived units which are only defined as a basis for named derived units).
 </para>
 <para>
 Depending on the unit class, different elements in the relation page of the dialog will be enabled.
@@ -2521,13 +2521,13 @@ Depending on the unit class, different elements in the relation page of the dial
 For named derived units, base unit, exponent and relation must all be specified (although the exponent and relation may both be left as <quote>1</quote>). The base unit can be of any unit class and it is recommended that named derived units are defined in relation to the closest unit (e.g. 1 ft = 3 hands, 1 hand = 4 in, and 1 in = 0.0254 m). The relation is usually just a number that tells how large quantity of the base unit is needed to get the derived unit (derived unit = relation × base unit<superscript>exponent</superscript>).
 </para>
 <para>
-It is possible to create units with non-linear relation to the base unit. Replace the factor with <quote>\x</quote> and the exponent with <quote>\y</quote> (e.g. <quote>\x + 273.15</quote> for degrees Celsius with Kelvin as base unit). For non-linear relations the reverse relation (for conversion back from the base unit) should also be specified (<quote>\x - 273.15</quote> for degrees Celsius).
+It is possible to create units with a non-linear relation to the base unit. Replace the factor with <quote>\x</quote> and the exponent with <quote>\y</quote> (e.g. <quote>\x + 273.15</quote> for degrees Celsius with Kelvin as base unit). For non-linear relations the reverse relation (for conversion back from the base unit) should also be specified (<quote>\x - 273.15</quote> for degrees Celsius).
 </para>
 <para>
 Base unit mixing can be enabled (by default) for named derived units. This is used for units such as feet and minutes, which are often combined with other units instead of using decimals (e.g. <quote>5.25 ft = 5 ft + 3 in</quote>, <quote>250 s = 4 min + 10 s</quote>). This behavior can be fine-tuned using the priority and minimum base unit number properties.
 </para>
 <para>
-For unnamed derived units a unit expression, with one or multiple units, must be specified in the base units field. This expressions may only contain units, prefixes, exponents, multiplication and division (e.g. <quote>km/h</quote>). 
+For unnamed derived units a unit expression, with one or multiple units, must be specified in the base units field. This expression may only contain units, prefixes, exponents, multiplication and division (e.g. <quote>km/h</quote>). 
 </para>
 </sect1>
 </chapter>
